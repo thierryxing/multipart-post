@@ -69,7 +69,7 @@ module Parts
       content_disposition = opts.delete("Content-Disposition") || "form-data"
 
       part = ''
-      part << "--#{boundary}\r\n"
+      part << "\r\n--#{boundary}\r\n"
       part << "Content-Disposition: #{content_disposition}; name=\"#{name.to_s}\"; filename=\"#{filename}\"\r\n"
       # part << "Content-Length: #{content_len}\r\n"
       if content_id = opts.delete("Content-ID")
